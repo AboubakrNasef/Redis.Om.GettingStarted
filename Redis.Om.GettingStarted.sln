@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModels", "DomainModels\DomainModels.csproj", "{F7246FDE-66EC-4896-83B4-C11E0D7D1F63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSDK", "DatabaseSDK\DatabaseSDK.csproj", "{B0F37D07-2116-4B8C-88D6-5F3EA584A6D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseSDK.IntegrationTests", "DatabaseSDK.IntegrationTests\DatabaseSDK.IntegrationTests.csproj", "{DFF6DDBF-315B-4BFC-B165-241CBB6E4FF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B0F37D07-2116-4B8C-88D6-5F3EA584A6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0F37D07-2116-4B8C-88D6-5F3EA584A6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0F37D07-2116-4B8C-88D6-5F3EA584A6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFF6DDBF-315B-4BFC-B165-241CBB6E4FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFF6DDBF-315B-4BFC-B165-241CBB6E4FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFF6DDBF-315B-4BFC-B165-241CBB6E4FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFF6DDBF-315B-4BFC-B165-241CBB6E4FF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

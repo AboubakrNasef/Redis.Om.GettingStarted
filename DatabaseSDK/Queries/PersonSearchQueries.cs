@@ -10,12 +10,12 @@ using Redis.OM.Searching;
 
 namespace DatabaseSDK.Queries
 {
-    internal class PersonSearchQueris : IPersonSearchQueris
+    public class PersonSearchQueries : IPersonSearchQueries
     {
         private readonly RedisConnectionProvider _provider;
         private readonly IRedisCollection<Person> _persons;
 
-        public PersonSearchQueris(RedisConnectionProvider provider)
+        public PersonSearchQueries(RedisConnectionProvider provider)
         {
             _provider = provider;
             _persons = _provider.RedisCollection<Person>();
@@ -28,7 +28,7 @@ namespace DatabaseSDK.Queries
 
         public async Task DeletePersonAsync(string id)
         {
-            await _persons.DeleteAsync(id);
+            await  _provider.Connection.UnlinkAsync($"Person:{id}");
         }
 
         public async Task<IEnumerable<Person>> GetAllPersonsAsync()
@@ -44,7 +44,7 @@ namespace DatabaseSDK.Queries
         public async Task<IEnumerable<Person>> SearchPersonsAsync(string searchTerm)
         {
            
-            return await _persons.Where(p => p.FirstName.Contains(searchTerm) || p.LastName.Contains(searchTerm) || p.PersonalStatement.Contains(searchTerm)).ToListAsync();
+            return await _persons.Where(p => p.FirstName.Contains(searchTerm) || p.LastName.Contains(searchTerm) || p.EmailAddress.Contains(searchTerm)).ToListAsync();
         }
 
         public async Task UpdatePersonAsync(Person person)

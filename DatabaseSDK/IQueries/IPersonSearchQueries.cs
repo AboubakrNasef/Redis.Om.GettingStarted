@@ -5,7 +5,7 @@ using Redis.OM.Model;
 
 namespace DatabaseSDK.IQueries
 {
-    public interface IPersonSearchQueris
+    public interface IPersonSearchQueries
     {
         Task<Person> GetPersonByIdAsync(string id);
         Task<IEnumerable<Person>> GetAllPersonsAsync();
