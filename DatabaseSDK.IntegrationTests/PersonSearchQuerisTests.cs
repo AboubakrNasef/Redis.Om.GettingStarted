@@ -77,13 +77,13 @@ namespace DatabaseSDK.IntegrationTests
         [Fact]
         public async Task Test_SearchPersonsAsync()
         {
-            var fakePersons = GenerateFakePersons(5);
+            var fakePersons = GenerateFakePersons(15);
             foreach (var person in fakePersons)
             {
                 await _personSearchQueris.AddPersonAsync(person);
             }
             var searchTerm = fakePersons[0].FirstName[..2];
-            var resultsExpected = fakePersons.Where(p => p.FirstName.Contains(searchTerm)).ToList();
+            var resultsExpected = fakePersons.Where(p => p.FirstName.Contains(searchTerm) || p.LastName.Contains(searchTerm) || p.EmailAddress.Contains(searchTerm)).ToList();
             var searchResults = await _personSearchQueris.SearchPersonsAsync(searchTerm);
             searchResults.ShouldBeEquivalentTo(resultsExpected);
         }
